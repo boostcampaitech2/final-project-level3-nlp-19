@@ -1,3 +1,14 @@
+# 실행 방법
+## elasticsearch 설치
+## wiki data elasticsearch 입력
+## 실행하고자 하는 명령어 입력(argument.py 
+
+
+
+
+
+
+
 # final-project-level3-nlp-19
 ## Collaboration tool
 > Notion  
