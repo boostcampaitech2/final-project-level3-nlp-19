@@ -89,6 +89,7 @@ def get_prediction(model, tokenizer, sentence):
 
     # 입력받은 sentence 정보를 datasets로 변환하기
     # dictionary -> json save -> load json to dataset
+    print(sentence)
     sample_test = {"data": [
 		{
 			"id": "1",
@@ -96,6 +97,9 @@ def get_prediction(model, tokenizer, sentence):
 		}]}
 
     with open(os.path.join(data_args.dataset_name, 'sample_test.json'), "w", encoding='utf-8') as json_file:
+        json.dump(sample_test, json_file, indent=4, sort_keys=True)
+
+    with open(os.path.join(data_args.dataset_name, 'sample_tests.json'), "w", encoding='utf-8') as json_file:
         json.dump(sample_test, json_file, indent=4, sort_keys=True)
 
     datasets = load_dataset('json', data_files={'validation':os.path.join(data_args.dataset_name, 'sample_test.json')}, field='data')

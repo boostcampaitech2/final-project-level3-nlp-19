@@ -20,8 +20,9 @@ def main():
         st.form_submit_button("Submit")
 
 
-    prediction = get_prediction(model, tokenizer, sentence)
-    
+    prediction, df = get_prediction(model, tokenizer, sentence)
+    context = df['context'][0]
     st.write(f'label is {prediction}')
+    st.write(f'label is {context}')
 
 main()

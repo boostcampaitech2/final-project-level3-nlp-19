@@ -123,7 +123,7 @@ def run_retrieval(
     for idx in range(len(df_sparse)):
         df["context"][idx] = " ".join(df_sparse["context"][idx])
 
-
+    print(df[['context','id','question']])
 
     # test data 에 대해선 정답이 없으므로 id question context 로만 데이터셋이 구성됩니다.
     if training_args.do_predict:
@@ -153,8 +153,8 @@ def run_retrieval(
                 "question": Value(dtype="string", id=None),
             }
         )
-
-    datasets = DatasetDict({"validation": Dataset.from_pandas(df, features=f)})
+    # print(Dataset.from_pandas(df, features=f))
+    datasets = DatasetDict({"validation": Dataset.from_pandas(df[['context','id','question']], features=f)})
     return datasets, df
 
 

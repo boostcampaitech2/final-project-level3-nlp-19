@@ -1,7 +1,7 @@
 import os
 import json
 import time
-import faiss
+# import faiss
 import pickle
 import numpy as np
 import pandas as pd
@@ -56,7 +56,7 @@ class SparseRetrieval:
 
         self.p_embedding = None  # get_sparse_embedding()로 생성합니다
         self.indexer = None  # build_faiss()로 생성합니다.
-        self.es = Elasticsearch()
+        self.es = Elasticsearch('http://localhost:9200')
 
     def build_elastic_db(self):
         # db 이름 설정
@@ -158,7 +158,7 @@ class SparseRetrieval:
 
         
         INDEX_NAME = "news_wiki_index_update"
-        if not self.es.indices.exists(INDEX_NAME):
+        if not self.es.indices.exists(index=INDEX_NAME):
             self.build_elastic_db()
 
         if isinstance(query_or_dataset, str):

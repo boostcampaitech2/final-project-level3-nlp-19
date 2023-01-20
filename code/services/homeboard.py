@@ -61,8 +61,8 @@ class Homeboard():
             es.transport.close()
         except:
             pass
-        self.es = Elasticsearch()
-        if not self.es.indices.exists(INDEX_NAME) :
+        self.es = Elasticsearch('http://localhost:9200')
+        if not self.es.indices.exists(index=INDEX_NAME) :
             raise Exception("INDEX {0} not exists".format(INDEX_NAME))
             exit()
         

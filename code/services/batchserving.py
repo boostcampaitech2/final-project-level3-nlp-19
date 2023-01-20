@@ -8,7 +8,7 @@ from upload_proto_prediction import load_model, get_prediction
 from schema import models
 from elasticsearch import Elasticsearch, helpers
 
-es = Elasticsearch()
+es = Elasticsearch('http://localhost:9200')
 
 
 

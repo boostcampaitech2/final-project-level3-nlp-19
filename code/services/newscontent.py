@@ -2,7 +2,7 @@ from sqlalchemy.orm import Session
 from schema.models import UserNews, UserInput
 from elasticsearch import Elasticsearch
 
-es = Elasticsearch()
+es = Elasticsearch('http://localhost:9200')
 
 
 # news 기사 본문 가져오기

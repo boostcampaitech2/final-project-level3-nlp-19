@@ -5,7 +5,7 @@ from sqlalchemy.orm import Session
 
 from elasticsearch import Elasticsearch
 
-es = Elasticsearch()
+es = Elasticsearch('http://localhost:9200')
 # 사용자가 스크랩한 뉴스기사 목록 불러오기
 class Scrappedboard():
 
