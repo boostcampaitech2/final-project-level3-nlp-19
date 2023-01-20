@@ -1,6 +1,6 @@
 # 실행 방법
 > elasticsearch 설치(https://github.com/thejungwon/search-engine-tutorial)
-> wiki data elasticsearch 입력(Elasticsearch로 CRUD 구현하기.ipynb)
+> wiki data elasticsearch 입력(Elasticsearch로 CRUD 구현하기.ipynb)  
 > 관련 패키지 설치 (requirements.txt)  
 > 실행하고자 하는 명령어 입력(argument.py)   
 
